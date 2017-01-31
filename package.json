@@ -1,0 +1,22 @@
+{
+  "name": "nodetelegrampresence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.1.4",
+    "child_process": "^1.0.2",
+    "ip-subnet-calculator": "^1.1.7",
+    "lodash": "^4.17.2",
+    "lowdb": "^0.14.0",
+    "node-telegram-bot-api": "^0.25.0",
+    "request": "^2.79.0",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

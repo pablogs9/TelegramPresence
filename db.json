@@ -1,0 +1,38 @@
+{
+  "admin": 4440816,
+  "notificationChats": [
+    4440816
+  ],
+  "users": [
+    {
+      "name": "Camellia Miura",
+      "mac": [
+        "AC:BC:32:8B:33:47",
+        "6C:8D:C1:13:B3:C0"
+      ],
+      "active": true
+    },
+    {
+      "name": "Lemuel Griest",
+      "mac": [
+        "6C:8D:C1:13:B3:C2"
+      ],
+      "active": false
+    },
+    {
+      "name": "Rodrigo Casados",
+      "mac": [
+        "6C:8D:C1:13:B3:C1",
+        "C0:EE:FB:DD:E7:8D"
+      ],
+      "active": true
+    },
+    {
+      "name": "Barbera Neuman",
+      "mac": [
+        "4C:74:03:F3:85:D5"
+      ],
+      "active": false
+    }
+  ]
+}
