@@ -40,7 +40,7 @@ module.exports.availableInterfaces = function() {
 module.exports.aliveDevices = function(iface, cb) {
     var aliveIps = []
 
-    async.each(iface["net"]["validRange"], function(ip, cb) {
+    async.each(iface["net"]["validRange"], function(ip, cba) {
         var ping = spawn("ping", ["-W", "1", "-c", "1", ip]);
 
         ping.on('close', function(code) {
@@ -54,10 +54,10 @@ module.exports.aliveDevices = function(iface, cb) {
                 });
 
                 arp.on('close', function(code) {
-                    var table = buffer.split('\n\r');
+                    var table = buffer.split('\n');
                     for (var l = 0; l < table.length; l++) {
                         if (table[l].indexOf(ip) > 0) {
-                            var mac = parseMACaddress(table[l].split(" ")[3].replace(/-/g, ':'));
+                            var mac = parseMACaddress(table[l].replace(/\s\s+/g, ' ').split(" ")[3].replace(/-/g, ':'));
 
                             request('http://api.macvendors.com/' + mac, function(error, response, vendor) {
                                 var v = null
@@ -69,16 +69,14 @@ module.exports.aliveDevices = function(iface, cb) {
                                     "mac": mac,
                                     "vendor": v
                                 })
-                                cb()
+                                cba()
 
                             })
-                        } else {
-                            cb()
-                        }
+                        } 
                     }
                 })
             } else {
-                cb()
+                cba()
             }
         })
 
